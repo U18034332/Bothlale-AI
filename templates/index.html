@@ -4,8 +4,24 @@
     <title>Python Code Editor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js"></script>
-    <!-- Add CodeMirror modes and addons as necessary -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/python-hint.min.js"></script>
     <!-- Add other necessary scripts and stylesheets -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.css">
+
+    <style>
+        /* You can add custom CSS styles here or link an external CSS file */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #code-editor {
+            border: 1px solid #ccc;
+            height: 400px; /* Adjust height as needed */
+        }
+    </style>
 </head>
 <body>
     <textarea id="code-editor"></textarea>
@@ -14,8 +30,17 @@
         var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
             lineNumbers: true,
             mode: "python", // Set the mode to Python
-            // Add other options and configurations as per requirements
+            extraKeys: { "Ctrl-Space": "autocomplete" }, // Enable autocomplete on Ctrl+Space
+            hintOptions: {
+                extraKeys: { "Ctrl-Space": "autocomplete" }, 
+            }
         });
+
+        // Enable autocomplete on demand (optional)
+        CodeMirror.commands.autocomplete = function(cm) {
+            cm.showHint({ hint: CodeMirror.hint.python });
+        };
     </script>
 </body>
 </html>
+
