@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Code Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js"></script>
+    <!-- Add CodeMirror modes and addons as necessary -->
+    <!-- Add other necessary scripts and stylesheets -->
+</head>
+<body>
+    <textarea id="code-editor"></textarea>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
+            lineNumbers: true,
+            mode: "python", // Set the mode to Python
+            // Add other options and configurations as per requirements
+        });
+    </script>
+</body>
+</html>
