@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Python Code Editor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/dialog/dialog.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.css">
-    <link rel="stylesheet" href="https://codemirror.net/5/addon/fold/foldgutter.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.css">
-    <link rel="stylesheet" href="https://codemirror.net/5/theme/monokai.css">
-    <link rel="stylesheet" href="/static/css/main.css">
+    <head>
+        <title>Python Code Editor</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/dialog/dialog.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.css">
+        <link rel="stylesheet" href="https://codemirror.net/5/addon/fold/foldgutter.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.css">
+        <link rel="stylesheet" href="https://codemirror.net/5/theme/monokai.css">
+        <link rel="stylesheet" href="/static/css/main.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/edit/matchbrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/edit/closebrackets.min.js"></script>
-    <script src="https://codemirror.net/5/addon/fold/foldcode.js"></script>
-    <script src="https://codemirror.net/5/addon/fold/foldgutter.js"></script>
-    <script src="https://codemirror.net/5/addon/display/fullscreen.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/fold/brace-fold.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/search/searchcursor.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/search/search.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/dialog/dialog.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/comment/comment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/lint/lint.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/selection/active-line.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/display/placeholder.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/edit/matchbrackets.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/edit/closebrackets.min.js"></script>
+        <script src="https://codemirror.net/5/addon/fold/foldcode.js"></script>
+        <script src="https://codemirror.net/5/addon/fold/foldgutter.js"></script>
+        <script src="https://codemirror.net/5/addon/display/fullscreen.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/fold/brace-fold.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/search/searchcursor.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/search/search.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/dialog/dialog.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/comment/comment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/lint/lint.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/selection/active-line.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/display/placeholder.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="upload-form">
+            <h3>Upload Python File</h3>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+    
+        <!-- File Explorer -->
+        <div class="file-explorer">
+            <h3>File Explorer</h3>
+            <ul>
+                {% for file in files %}
+                    <li><a href="/view/{{ file }}">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    
+        <textarea id="code-editor" placeholder="Write your Python code here"></textarea>
 
-
-</head>
-<body>
-    <textarea id="code-editor" placeholder="Write your Python code here"></textarea>
-
-    <script src="/static/js/script.js"></script>
-</body>
+        <script src="/static/js/script.js"></script>
+    </body>
 </html>
 
 

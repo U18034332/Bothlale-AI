@@ -7,3 +7,11 @@ body {
     height: 600px; 
     width: 800px; 
 }
+
+.file-explorer {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 20px;
+    float: left;
+}
